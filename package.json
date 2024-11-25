@@ -10,6 +10,11 @@
     "license": "ISC",
     "description": "",
     "dependencies": {
-        "cntsc": "github:feyyum/celestia-ts-client"
+        "bullmq": "^5.29.1",
+        "cntsc": "github:feyyum/celestia-ts-client",
+        "ioredis": "^5.4.1"
+    },
+    "devDependencies": {
+        "@types/node": "^22.9.3"
     }
 }

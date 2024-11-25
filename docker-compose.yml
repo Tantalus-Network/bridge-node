@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  redis-stack:
+    image: redis/redis-stack:latest
+    container_name: redis-stack
+    ports:
+      - "6379:6379"
+      - "8001:8001"
+    restart: always
+
+  celestia-node:
+    image: ghcr.io/celestiaorg/celestia-node:v0.20.2-mocha
+    container_name: celestia-node
+    environment:
+      - NODE_TYPE=light
+      - P2P_NETWORK=mocha
+    command: >
+      celestia light start
+      --core.ip rpc-mocha.pops.one
+      --p2p.network mocha
+      --rpc.skip-auth
+    ports:
+      - "26658:26658"
+    restart: always
