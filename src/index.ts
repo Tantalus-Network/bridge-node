@@ -1,7 +1,7 @@
 import { Client } from "cntsc";
 import { Queue, Worker, QueueEvents } from "bullmq";
 import IORedis from "ioredis";
-import generateRandomNamespace from "./utils/generateRandomNamespace";
+import { generateRandomNamespace } from "./utils/celestia";
 
 const connection = new IORedis({
     maxRetriesPerRequest: null,

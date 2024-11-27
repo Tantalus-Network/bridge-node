@@ -1,6 +1,6 @@
 import { sha256 } from "js-sha256";
 
-export default (): string => {
+export const generateRandomNamespace = (): string => {
     const seed = Math.random().toString();
     const namespaceVersionByte = Buffer.from([0x00]);
 
